@@ -1,8 +1,5 @@
 import os
-from Hangman.Hangman import play_hangman
-from Landscaper.Landscaper import main as play_landscaper
-from pong.pong import main as play_pong
-from Tic_Tac_Toe.tic_tac_toe import play_game as play_tic_tac_toe
+import subprocess
 
 def clear_screen():
     if os.name == 'nt':
@@ -23,13 +20,13 @@ def main_menu():
         choice = input("Enter your choice (1-5): ")
 
         if choice == "1":
-            play_hangman()
+            subprocess.call(["python", "Hangman/Hangman.py"])
         elif choice == "2":
-            play_landscaper()
+            subprocess.call(["python", "Landscaper/Landscaper.py"])
         elif choice == "3":
-            play_pong()
+            subprocess.call(["python", "pong/pong.py"])
         elif choice == "4":
-            play_tic_tac_toe()
+            subprocess.call(["python", "Tic-Tac-Toe/tic-tac-toe.py"])
         elif choice == "5":
             print("Thank you for playing. Goodbye!")
             break
